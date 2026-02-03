@@ -343,3 +343,41 @@ h3 {
 @keyframes blink-status {
     70% { opacity: 0; }
 }
+
+/* --- Footer / Termination Styles --- */
+.border-top-accent {
+    border-top: 4px solid var(--accent-primary);
+}
+
+.terminal-footer-log {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.log-line {
+    margin-bottom: 5px;
+    color: #888;
+}
+
+.social-icon-link {
+    font-family: 'Silkscreen', sans-serif;
+    color: var(--accent-secondary);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.social-icon-link:hover {
+    color: var(--accent-primary);
+    text-shadow: 0 0 8px var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+    .social-icon-link {
+        margin-left: 0;
+        margin-right: 15px;
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
