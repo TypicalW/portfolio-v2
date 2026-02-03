@@ -3,20 +3,26 @@
   --text-color: #1A1A1A;
   --accent-primary: #FF3864;
   --accent-secondary: #3E78B2;
+  --card-bg-color: #FFFFFF;
+  --blueprint-bg:#F1F3F5;
+  --bg-overlay: rgba(232, 232, 232, 0.85)
 }
 
 [data-bs-theme="dark"] {
-  --bg-color: #1A1A1A;
+  --bg-color: #0D0D0D;
   --text-color: #F5F5F5;
+  --card-bg-color: #1A1A1A;
+  --blueprint-bg:#121212;
+  --bg-overlay: rgba(13, 13, 13, 0.9);
 }
 
 body {
-  background: linear-gradient(rgba(232, 232, 232, 0.85), rgba(232, 232, 232, 0.85)), 
-              url('/assets/images/background.jpg');
+  background: linear-gradient(var(--bg-overlay), var(--bg-overlay));
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-color: var(--bg-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
   color: var(--text-color) !important;
   font-family: "Cutive Mono", monospace;
   margin: 0;
@@ -35,6 +41,10 @@ body {
   min-height: 100vh;
   text-align: center;
   padding: 20px;
+}
+
+p,span,div{
+    color: var(--text-color);/
 }
 
 h3 {
@@ -199,8 +209,14 @@ h3 {
     pointer-events: none;
 } */
 
+.terminal-container {
+    background-color: #1a1a1a !important; 
+    border: 4px solid var(--text-color);
+    box-shadow: 8px 8px 0px var(--text-color);
+}
+
 .research-blueprint {
-    background-color: #e9ecef; 
+    background-color: var(--blueprint-bg);
     border: 4px solid var(--text-color);
     position: relative;
     overflow: hidden;
@@ -209,6 +225,12 @@ h3 {
         linear-gradient(rgba(62, 120, 178, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(62, 120, 178, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
+}
+
+.research-blueprint .abstract-text, 
+.research-blueprint .spec-value,
+.research-blueprint p {
+    color: var(--text-color) !important;
 }
 
 /* The "Rubber Stamp" effect */
@@ -275,9 +297,9 @@ h3 {
 
 /* --- Active Processes Styles --- */
 .process-card {
-    background-color: var(--text-color); /* Dark card like a terminal window */
-    border: 2px solid var(--text-color);
-    color: #fff;
+    background-color: var(--card-bg-color) !important; /* Dark card like a terminal window */
+    border: 2px solid var(--text-color) !important;
+    color: var(--text-color);
     height: 100%;
     transition: transform 0.2s ease;
 }
@@ -303,6 +325,7 @@ h3 {
 
 .process-title {
     font-family: 'Silkscreen', sans-serif;
+    color: var(--text-color);
     font-size: 1rem;
     letter-spacing: 1px;
     margin-bottom: 15px;
@@ -311,7 +334,8 @@ h3 {
 .process-desc {
     font-family: 'Cutive Mono', monospace;
     font-size: 0.85rem;
-    color: #bbb;
+    color: var(--text-color) !important;
+    opacity: 0.8;
     min-height: 60px;
 }
 
@@ -319,20 +343,20 @@ h3 {
 .progress-bar-container {
     width: 100%;
     height: 4px;
-    background: #333;
-    border: 1px solid #444;
+    background: rgba(128, 128, 128, 0.2);
+    border: 1px solid var(--text-color);
 }
 
 .progress-bar-fill {
     height: 100%;
-    background: var(--accent-primary);
+    background-color: var(--accent-primary);
     box-shadow: 0 0 10px var(--accent-primary);
 }
 
 .process-stats span {
     font-family: 'Silkscreen', sans-serif;
     font-size: 0.6rem;
-    color: #777;
+    color: var(--text-color) !important;
 }
 
 /* Status Pulse Animation */
@@ -381,3 +405,19 @@ h3 {
         margin-top: 10px;
     }
 }
+/* Terminal button styling */
+.btn-terminal {
+    font-family: 'Silkscreen', sans-serif;
+    background: none;
+    border: 2px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.btn-terminal:hover {
+    background: var(--accent-secondary);
+    color: var(--bg-color);
+}
+
