@@ -24,4 +24,10 @@ A professional, responsive personal portfolio website built to showcase engineer
 │   ├── images/         # Optimized image assets (PNG, SVG, ICO)
 │   └── js/             # Frontend logic and theme controllers
 ├── index.html          # Main entry point
-└── README.md           # Project documentation`
+└── README.md           # Project documentation
+```
+## Author
+Ashmit Mishra
+
+
+
