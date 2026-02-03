@@ -272,3 +272,74 @@ h3 {
         margin-bottom: 30px;
     }
 }
+
+/* --- Active Processes Styles --- */
+.process-card {
+    background-color: var(--text-color); /* Dark card like a terminal window */
+    border: 2px solid var(--text-color);
+    color: #fff;
+    height: 100%;
+    transition: transform 0.2s ease;
+}
+
+.process-card:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-primary);
+}
+
+.process-id {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 0.7rem;
+    color: var(--accent-secondary);
+}
+
+.status-badge {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.process-title {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.process-desc {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 0.85rem;
+    color: #bbb;
+    min-height: 60px;
+}
+
+/* --- Progress Bar Inside Cards --- */
+.progress-bar-container {
+    width: 100%;
+    height: 4px;
+    background: #333;
+    border: 1px solid #444;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--accent-primary);
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.process-stats span {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 0.6rem;
+    color: #777;
+}
+
+/* Status Pulse Animation */
+.pulse {
+    animation: blink-status 1.5s step-end infinite;
+}
+
+@keyframes blink-status {
+    70% { opacity: 0; }
+}
