@@ -26,8 +26,12 @@ A professional, responsive personal portfolio website built to showcase engineer
 ├── index.html          # Main entry point
 └── README.md           # Project documentation
 ```
+
+## Deployed Website
+https://69825db0422ced24cf4a2f9a--spectacular-snickerdoodle-444861.netlify.app/
 ## Author
 Ashmit Mishra
+
 
 
 
